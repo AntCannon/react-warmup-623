@@ -24,9 +24,12 @@ function App() {
       calories: 200,
     },
   ]);
+  console.log(`workoutList`, workoutList)
 
   // Function to add a new workout
-  const addWorkout = () => {};
+  const addWorkout = (workout) => {
+    setWorkoutList([...workoutList, workout])
+  };
 
   return (
     <div className="App">
