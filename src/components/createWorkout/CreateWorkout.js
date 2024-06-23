@@ -17,6 +17,12 @@ const CreateWorkout = ({ addWorkout }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addWorkout(workoutForm)
+    setWorkoutForm({
+      name: "",
+      date: "",
+      duration: "",
+      calories: ""
+    })
   };
 
   console.log(workoutForm)
@@ -30,6 +36,7 @@ const CreateWorkout = ({ addWorkout }) => {
             type="text"
             id="name"
             placeholder="Workout name"
+            value={workoutForm.name}
             onChange={onChange}
           />
         </label>
@@ -38,6 +45,7 @@ const CreateWorkout = ({ addWorkout }) => {
           <input
             type="date"
             id="date"
+            value={workoutForm.date}
             onChange={onChange}
           />
         </label>
@@ -46,6 +54,7 @@ const CreateWorkout = ({ addWorkout }) => {
           <input
             type="number"
             id="duration"
+            value={workoutForm.duration}
             onChange={onChange}
           />
         </label>
@@ -54,6 +63,7 @@ const CreateWorkout = ({ addWorkout }) => {
           <input
             type="number"
             id="calories"
+            value={workoutForm.calories}
             onChange={onChange}
           />
         </label>
